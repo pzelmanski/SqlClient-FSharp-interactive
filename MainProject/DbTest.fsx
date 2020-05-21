@@ -7,6 +7,6 @@ open FSharp.Data
 [<Literal>]
 let connStr = "Server=.;Initial catalog=SAFE_Bank;Trusted_Connection=true"
 
-let dupa() = do
+let GetData() = do
     use cmd = new SqlCommandProvider<"SELECT TOP(@topN) * from test1" , connStr>(connStr)
     cmd.Execute(topN = 3L) |> printfn "%A";;
